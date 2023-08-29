@@ -71,6 +71,38 @@ if ( ! is_front_page() || is_home() ) { ?>
 
 <?php wp_footer(); ?>
 
+<?php
+  $woocommerce_page = get_post_meta(get_the_ID(),'woocommerce_page',true);
+  if(! empty($woocommerce_page)) :
+?>
+
+<script type="text/javascript">
+	(function () {
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	})();
+</script>
+
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js' id='zoom-js'></script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js' id='flexslider-js'></script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js' id='photoswipe-js'></script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js' id='photoswipe-ui-default-js'></script>
+<script id='wc-single-product-js-extra'>
+var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
+</script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js' id='wc-single-product-js'></script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js' id='jquery-blockui-js'></script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js' id='js-cookie-js'></script>
+<script id='woocommerce-js-extra'>
+var woocommerce_params = {"ajax_url":"\/sites\/thrive-well-v2\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/sites\/thrive-well-v2\/?wc-ajax=%%endpoint%%"};
+</script>
+<script src='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js' id='woocommerce-js'></script>
+
+<script src='http://localhost/sites/thrive-well-v2/wp-includes/js/comment-reply.min.js' id='comment-reply-js'></script>
+
+<?php endif; ?>
+
 <script>
 var addToCartButton = document.querySelector('.woocommerce-page .add_to_cart_button');
 if (addToCartButton) {

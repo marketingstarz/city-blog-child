@@ -41,12 +41,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<?php if ( is_single() ) : ?>
+	<?php if ( is_page() ) : ?>
 	<?php $schema = get_post_meta( get_the_ID(), 'schema', true);if( ! empty( $schema ) ) {echo $schema;}?>
 	<?php endif; ?>
 
 	<?php wp_head(); ?>
 
+<?php
+  $woocommerce_page = get_post_meta(get_the_ID(),'woocommerce_page',true);
+  if(! empty($woocommerce_page)) :
+?>
+
+<link rel='stylesheet' id='wc-blocks-style-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-active-filters-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/active-filters.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-add-to-cart-form-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/add-to-cart-form.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-packages-style-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/packages-style.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-all-products-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/all-products.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-all-reviews-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/all-reviews.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-attribute-filter-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/attribute-filter.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-breadcrumbs-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/breadcrumbs.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-catalog-sorting-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/catalog-sorting.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-customer-account-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/customer-account.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-featured-category-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/featured-category.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-featured-product-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/featured-product.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-mini-cart-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/mini-cart.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-price-filter-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/price-filter.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-add-to-cart-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-add-to-cart.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-button-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-button.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-categories-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-categories.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-image-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-image.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-image-gallery-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-image-gallery.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-query-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-query.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-results-count-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-results-count.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-reviews-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-reviews.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-sale-badge-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-sale-badge.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-search-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-search.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-sku-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-sku.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-stock-indicator-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-stock-indicator.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-summary-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-summary.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-title-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-title.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-rating-filter-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/rating-filter.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-reviews-by-category-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/reviews-by-category.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-reviews-by-product-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/reviews-by-product.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-details-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-details.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-single-product-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/single-product.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-stock-filter-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stock-filter.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-cart-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/cart.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-checkout-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/checkout.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-mini-cart-contents-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/mini-cart-contents.css' media='all' />
+
+<link rel='stylesheet' id='photoswipe-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css' media='all' />
+<link rel='stylesheet' id='photoswipe-default-skin-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='http://localhost/sites/thrive-well-v2/wp-content/plugins/woocommerce/assets/css/woocommerce.css' media='all' />
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+
+<?php endif; ?>
 
 <style>
 body,
@@ -355,7 +410,10 @@ h2.short-description-header {
 .single-product .entry-summary {
   margin-top: -12px;
 }
+/*\\\\\\\\\\\\\\\\ Custom Product Template //////////////*/
+
 </style>
+
 </head>
 <body <?php body_class(); ?>>
 

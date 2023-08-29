@@ -51,7 +51,7 @@ add_filter( 'get_the_archive_title', 'prefix_category_title' );
 
 // Disable default Yoast Schema
 function disable_json_ld_output_on_single_posts() {
-  if ( is_single() ) {
+  if ( is_page() ) {
     add_filter( 'wpseo_json_ld_output', '__return_false' );
   }
 }
