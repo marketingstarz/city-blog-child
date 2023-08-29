@@ -99,8 +99,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .woocommerce form .form-row .required { visibility: visible; }
 </style>
 
-<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-
 <?php endif; ?>
 
 <style>

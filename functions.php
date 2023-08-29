@@ -30,11 +30,10 @@ add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 
 // Enable Woocommerce support
-function mytheme_add_woocommerce_support() {
+function add_woocommerce_support() {
   add_theme_support( 'woocommerce' );
 }
-
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action( 'after_setup_theme', 'add_woocommerce_support' );
 
 add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-lightbox' );
